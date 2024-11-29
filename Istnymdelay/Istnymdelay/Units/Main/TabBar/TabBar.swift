@@ -15,27 +15,35 @@ struct TabBar: View {
     }
     
     var body: some View {
-        TabView(selection: $viewModel.selection) {
-            Text("Lista")
-                .tag(TabBarSelectionView.start.rawValue)
-                .environmentObject(viewModel)
-            
-            Text("Regulator czasowy")
-                .tag(TabBarSelectionView.tracker.rawValue)
-            
-            Text("Statystyka")
-                .tag(TabBarSelectionView.advices.rawValue)
-        }
-        .overlay {
-            if viewModel.isShowTabBar {
-                VStack {
-                    Spacer()
-                    TabBarCustomView(selectedItem: $viewModel.selection)
-                        .frame(height: UIScreen.main.bounds.height * 0.1)
+        VStack(spacing: .zero) {
+            TabView(selection: $viewModel.selection) {
+                ScrollView {
+                    VStack {
+                        ForEach(0..<8) { _ in
+                            Rectangle()
+                                .frame(height: 100)
+                                .overlay {
+                                    Rectangle()
+                                        .stroke(.red, lineWidth: 4)
+                                }
+                                .padding(.vertical, 4)
+                        }
+                    }
                 }
-                .ignoresSafeArea(edges: .bottom)
+                .tag(TabBarSelectionView.list.rawValue)
+                .environmentObject(viewModel)
+                
+                Text("Regulator czasowy")
+                    .tag(TabBarSelectionView.timer.rawValue)
+                
+                Text("Statistics")
+                    .tag(TabBarSelectionView.statistics.rawValue)
             }
+            
+            TabBarCustomView(selectedItem: $viewModel.selection)
+                .frame(height: UIScreen.main.bounds.height * 0.12)
         }
+        .ignoresSafeArea(edges: .bottom)
     }
 }
 

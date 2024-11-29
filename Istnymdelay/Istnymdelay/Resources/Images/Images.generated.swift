@@ -45,11 +45,9 @@ internal enum Asset {
   internal static let privacyBg = ImageAsset(name: "privacyBg")
   internal static let privacyLogo = ImageAsset(name: "privacyLogo")
   internal static let logo = ImageAsset(name: "logo")
-  internal static let advicesTab = ImageAsset(name: "advicesTab")
-  internal static let goalsTab = ImageAsset(name: "goalsTab")
-  internal static let plansTab = ImageAsset(name: "plansTab")
-  internal static let startTab = ImageAsset(name: "startTab")
-  internal static let trackerTab = ImageAsset(name: "trackerTab")
+  internal static let listTab = ImageAsset(name: "listTab")
+  internal static let statisticsTab = ImageAsset(name: "statisticsTab")
+  internal static let timerTab = ImageAsset(name: "timerTab")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

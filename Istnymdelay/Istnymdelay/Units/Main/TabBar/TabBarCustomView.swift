@@ -10,11 +10,10 @@ import SwiftUI
 struct TabBarCustomView: View {
     @Binding var selectedItem: Int
     
-    @State private var items: [TabBar.Item] = [
-        .init(imageName: Asset.startTab.name, color: .purple),
-        .init(imageName: Asset.trackerTab.name, color: .blue),
-        .init(imageName: Asset.advicesTab.name, color: .teal),
-        .init(imageName: Asset.goalsTab.name, color: .green)
+    private let items: [TabBar.Item] = [
+        .init(imageName: Asset.listTab.name, title: "Lista"),
+        .init(imageName: Asset.timerTab.name, title: "Regulator czasowy"),
+        .init(imageName: Asset.statisticsTab.name, title: "Statystyka"),
     ]
     
     private var arrange: [Int] {
@@ -28,69 +27,44 @@ struct TabBarCustomView: View {
     var body: some View {
         let arrange = (0..<items.count)
         
-        ZStack {
-            Color.white
-                .cornerRadius(24, corners: [.topLeft, .topRight])
-            
-            HStack(spacing: 0) {
-                ForEach(arrange, id: \.self) { index in
-                    let item = items[index]
-                    let isSelected = index == selectedItem
-                    var cornerRadius: CGFloat {
-                        if index == 0 || index == arrange.count - 1 {
-                            return 24
-                        } else {
-                            return 0
-                        }
-                    }
-                    var corners: UIRectCorner {
-                        if index == 0 {
-                            return .topLeft
-                        } else if index == arrange.count - 1 {
-                            return .topRight
-                        } else {
-                            return []
-                        }
-                    }
+        HStack(spacing: 0) {
+            Spacer()
+            ForEach(arrange, id: \.self) { index in
+                let item = items[index]
+                let isSelected = index == selectedItem
+                
+                VStack(spacing: 5) {
+                    Image(item.imageName)
+                        .renderingMode(.template)
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundStyle(isSelected ? .white : .greenLite)
+                        .frame(width: 42, height: 42, alignment: .center)
                     
-                    ZStack {
-                        item.color
-                            .cornerRadius(cornerRadius,
-                                          corners: corners)
-                        
-                        Image(item.imageName)
-                            .renderingMode(.template)
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundStyle(.white)
-                            .frame(maxWidth: 30)
-                    }
-                    .opacity(isSelected ? 1 : 0.7)
-                    .onTapGesture {
-                        withAnimation {
-                            selectedItem = index
-                        }
+                    Text(item.title)
+                        .foregroundStyle(isSelected ? .white : .greenLite)
+                        .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 16))
+                        .multilineTextAlignment(.center)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
+                }
+                .onTapGesture {
+                    withAnimation(.easeInOut(duration: 0.3)) {
+                        selectedItem = index
                     }
                 }
+                
+                Spacer()
             }
         }
-        .overlay {
-            RoundedRectangle(cornerRadius: 24)
-                .stroke(Color.purple, lineWidth: 1)
-               
-        }
+        .padding(23)
+        .background(Colors.greenMiddle.swiftUIColor)
     }
 }
 
-#Preview {
-    ZStack {
-        Color.gray
-        
-        VStack {
-            Spacer()
-            TabBarCustomView(selectedItem: .constant(0))
-                .frame(height: 100)
-        }
-        .ignoresSafeArea()
+struct TabBarCustomView_Previews: PreviewProvider {
+    static var previews: some View {
+        TabBarCustomView(selectedItem: .constant(0))
+            .previewLayout(.sizeThatFits)
     }
 }

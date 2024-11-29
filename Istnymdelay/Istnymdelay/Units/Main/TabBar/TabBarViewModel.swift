@@ -10,7 +10,7 @@ import SwiftUI
 
 extension TabBar {
     final class TabBarViewModel: ObservableObject {
-        @Published var selection = TabBarSelectionView.start.rawValue
+        @Published var selection = TabBarSelectionView.list.rawValue
         @Published var isShowTabBar = true
         
         func showTabBar(_ show: Bool) {
@@ -23,15 +23,14 @@ extension TabBar {
 
 extension TabBar {
     enum TabBarSelectionView: Int {
-        case start = 0
-        case tracker
-        case advices
-        case goals
+        case list = 0
+        case timer
+        case statistics
     }
     
     struct Item: Identifiable {
         private(set) var id = UUID()
         var imageName: String
-        var color: Color
+        var title: String
     }
 }
