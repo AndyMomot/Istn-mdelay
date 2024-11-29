@@ -1,0 +1,22 @@
+xcassets:
+  - inputs:
+    - Istnymdelay/Resources/Images
+    outputs:
+      - templateName: swift5
+        output: Istnymdelay/Resources/Images/Images.generated.swift
+  - inputs:
+    - Istnymdelay/Resources/Colors/Colors.xcassets
+    outputs:
+      - templateName: swift5
+        output: Istnymdelay/Resources/Colors/Colors.generated.swift
+        params:
+          enumName: Colors
+          
+fonts:
+  - inputs: Istnymdelay/Resources/Fonts
+    outputs:
+    - templateName: swift5
+      output: Istnymdelay/Resources/Fonts/Fonts.generated.swift
+      params:
+        enumName: Fonts
+
