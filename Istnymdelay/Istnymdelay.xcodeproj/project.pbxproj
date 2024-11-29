@@ -32,21 +32,11 @@
 		473CF95D2CF9DB7100D1EAD0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8B92CF9DB7100D1EAD0 /* ImagePicker.swift */; };
 		473CF95E2CF9DB7100D1EAD0 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8BB2CF9DB7100D1EAD0 /* ShareSheet.swift */; };
 		473CF95F2CF9DB7100D1EAD0 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8BD2CF9DB7100D1EAD0 /* BackButton.swift */; };
-		473CF9602CF9DB7100D1EAD0 /* BlurredContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8BF2CF9DB7100D1EAD0 /* BlurredContainerView.swift */; };
-		473CF9612CF9DB7100D1EAD0 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8C12CF9DB7100D1EAD0 /* BlurView.swift */; };
 		473CF9622CF9DB7100D1EAD0 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8C32CF9DB7100D1EAD0 /* CircularProgressBar.swift */; };
 		473CF9632CF9DB7100D1EAD0 /* DynamicHeightTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8C52CF9DB7100D1EAD0 /* DynamicHeightTextField.swift */; };
-		473CF9642CF9DB7100D1EAD0 /* GradientLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8C72CF9DB7100D1EAD0 /* GradientLoaderView.swift */; };
-		473CF9652CF9DB7100D1EAD0 /* ProgressProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8C82CF9DB7100D1EAD0 /* ProgressProgressBar.swift */; };
 		473CF9662CF9DB7100D1EAD0 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8CA2CF9DB7100D1EAD0 /* InputField.swift */; };
-		473CF9682CF9DB7100D1EAD0 /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8CE2CF9DB7100D1EAD0 /* NavigationTitleView.swift */; };
 		473CF9692CF9DB7100D1EAD0 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8D02CF9DB7100D1EAD0 /* NextButton.swift */; };
-		473CF96A2CF9DB7100D1EAD0 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8D22CF9DB7100D1EAD0 /* SegmentedControl.swift */; };
 		473CF96B2CF9DB7100D1EAD0 /* SwiftUIViewWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8D42CF9DB7100D1EAD0 /* SwiftUIViewWebView.swift */; };
-		473CF96C2CF9DB7100D1EAD0 /* GoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8D82CF9DB7100D1EAD0 /* GoalModel.swift */; };
-		473CF96D2CF9DB7100D1EAD0 /* IncomeCostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8D92CF9DB7100D1EAD0 /* IncomeCostModel.swift */; };
-		473CF96E2CF9DB7100D1EAD0 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8DA2CF9DB7100D1EAD0 /* NoteModel.swift */; };
-		473CF96F2CF9DB7100D1EAD0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8DB2CF9DB7100D1EAD0 /* UserModel.swift */; };
 		473CF9702CF9DB7100D1EAD0 /* Colors.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8DE2CF9DB7100D1EAD0 /* Colors.generated.swift */; };
 		473CF9712CF9DB7100D1EAD0 /* Fonts.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8E02CF9DB7100D1EAD0 /* Fonts.generated.swift */; };
 		473CF9722CF9DB7100D1EAD0 /* Images.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF8ED2CF9DB7100D1EAD0 /* Images.generated.swift */; };
@@ -66,6 +56,14 @@
 		473CF9B42CF9DF5900D1EAD0 /* FileManager+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF9B32CF9DF5900D1EAD0 /* FileManager+Image.swift */; };
 		473CF9B62CF9E11500D1EAD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473CF9B52CF9E11500D1EAD0 /* LaunchScreen.storyboard */; };
 		473CF9BC2CF9EA3400D1EAD0 /* DotsProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF9BA2CF9EA3400D1EAD0 /* DotsProgressView.swift */; };
+		473CF9C52CFA1DA500D1EAD0 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF9C22CFA1DA500D1EAD0 /* ListView.swift */; };
+		473CF9C62CFA1DA500D1EAD0 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF9C32CFA1DA500D1EAD0 /* ListViewModel.swift */; };
+		473CF9CB2CFA20AF00D1EAD0 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF9CA2CFA20AF00D1EAD0 /* AddTaskView.swift */; };
+		473CF9CD2CFA20B500D1EAD0 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF9CC2CFA20B500D1EAD0 /* AddTaskViewModel.swift */; };
+		473CF9CF2CFA2A9D00D1EAD0 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF9CE2CFA2A9D00D1EAD0 /* TaskModel.swift */; };
+		473CF9D82CFA345000D1EAD0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF9D52CFA345000D1EAD0 /* SettingsView.swift */; };
+		473CF9D92CFA345000D1EAD0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF9D62CFA345000D1EAD0 /* SettingsViewModel.swift */; };
+		473CF9DF2CFA357700D1EAD0 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CF9DD2CFA357700D1EAD0 /* TaskCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,21 +80,11 @@
 		473CF8B92CF9DB7100D1EAD0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		473CF8BB2CF9DB7100D1EAD0 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		473CF8BD2CF9DB7100D1EAD0 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
-		473CF8BF2CF9DB7100D1EAD0 /* BlurredContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredContainerView.swift; sourceTree = "<group>"; };
-		473CF8C12CF9DB7100D1EAD0 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		473CF8C32CF9DB7100D1EAD0 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		473CF8C52CF9DB7100D1EAD0 /* DynamicHeightTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightTextField.swift; sourceTree = "<group>"; };
-		473CF8C72CF9DB7100D1EAD0 /* GradientLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLoaderView.swift; sourceTree = "<group>"; };
-		473CF8C82CF9DB7100D1EAD0 /* ProgressProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressProgressBar.swift; sourceTree = "<group>"; };
 		473CF8CA2CF9DB7100D1EAD0 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
-		473CF8CE2CF9DB7100D1EAD0 /* NavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleView.swift; sourceTree = "<group>"; };
 		473CF8D02CF9DB7100D1EAD0 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
-		473CF8D22CF9DB7100D1EAD0 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		473CF8D42CF9DB7100D1EAD0 /* SwiftUIViewWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewWebView.swift; sourceTree = "<group>"; };
-		473CF8D82CF9DB7100D1EAD0 /* GoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalModel.swift; sourceTree = "<group>"; };
-		473CF8D92CF9DB7100D1EAD0 /* IncomeCostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeCostModel.swift; sourceTree = "<group>"; };
-		473CF8DA2CF9DB7100D1EAD0 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
-		473CF8DB2CF9DB7100D1EAD0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		473CF8DD2CF9DB7100D1EAD0 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		473CF8DE2CF9DB7100D1EAD0 /* Colors.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.generated.swift; sourceTree = "<group>"; };
 		473CF8E02CF9DB7100D1EAD0 /* Fonts.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.generated.swift; sourceTree = "<group>"; };
@@ -130,6 +118,14 @@
 		473CF9B32CF9DF5900D1EAD0 /* FileManager+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Image.swift"; sourceTree = "<group>"; };
 		473CF9B52CF9E11500D1EAD0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		473CF9BA2CF9EA3400D1EAD0 /* DotsProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotsProgressView.swift; sourceTree = "<group>"; };
+		473CF9C22CFA1DA500D1EAD0 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		473CF9C32CFA1DA500D1EAD0 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		473CF9CA2CFA20AF00D1EAD0 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		473CF9CC2CFA20B500D1EAD0 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
+		473CF9CE2CFA2A9D00D1EAD0 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		473CF9D52CFA345000D1EAD0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		473CF9D62CFA345000D1EAD0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		473CF9DD2CFA357700D1EAD0 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,22 +202,6 @@
 			path = BackButton;
 			sourceTree = "<group>";
 		};
-		473CF8C02CF9DB7100D1EAD0 /* BlurredContainer */ = {
-			isa = PBXGroup;
-			children = (
-				473CF8BF2CF9DB7100D1EAD0 /* BlurredContainerView.swift */,
-			);
-			path = BlurredContainer;
-			sourceTree = "<group>";
-		};
-		473CF8C22CF9DB7100D1EAD0 /* BlurView */ = {
-			isa = PBXGroup;
-			children = (
-				473CF8C12CF9DB7100D1EAD0 /* BlurView.swift */,
-			);
-			path = BlurView;
-			sourceTree = "<group>";
-		};
 		473CF8C42CF9DB7100D1EAD0 /* CircularProgressBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,15 +218,6 @@
 			path = DynamicHeightTextField;
 			sourceTree = "<group>";
 		};
-		473CF8C92CF9DB7100D1EAD0 /* GradientLoaderView */ = {
-			isa = PBXGroup;
-			children = (
-				473CF8C72CF9DB7100D1EAD0 /* GradientLoaderView.swift */,
-				473CF8C82CF9DB7100D1EAD0 /* ProgressProgressBar.swift */,
-			);
-			path = GradientLoaderView;
-			sourceTree = "<group>";
-		};
 		473CF8CB2CF9DB7100D1EAD0 /* InputField */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,28 +226,12 @@
 			path = InputField;
 			sourceTree = "<group>";
 		};
-		473CF8CF2CF9DB7100D1EAD0 /* NavigationTitle */ = {
-			isa = PBXGroup;
-			children = (
-				473CF8CE2CF9DB7100D1EAD0 /* NavigationTitleView.swift */,
-			);
-			path = NavigationTitle;
-			sourceTree = "<group>";
-		};
 		473CF8D12CF9DB7100D1EAD0 /* NextButton */ = {
 			isa = PBXGroup;
 			children = (
 				473CF8D02CF9DB7100D1EAD0 /* NextButton.swift */,
 			);
 			path = NextButton;
-			sourceTree = "<group>";
-		};
-		473CF8D32CF9DB7100D1EAD0 /* SegmentedControl */ = {
-			isa = PBXGroup;
-			children = (
-				473CF8D22CF9DB7100D1EAD0 /* SegmentedControl.swift */,
-			);
-			path = SegmentedControl;
 			sourceTree = "<group>";
 		};
 		473CF8D52CF9DB7100D1EAD0 /* WebView */ = {
@@ -292,15 +247,10 @@
 			children = (
 				473CF9BB2CF9EA3400D1EAD0 /* DotsProgressView */,
 				473CF8BE2CF9DB7100D1EAD0 /* BackButton */,
-				473CF8C02CF9DB7100D1EAD0 /* BlurredContainer */,
-				473CF8C22CF9DB7100D1EAD0 /* BlurView */,
 				473CF8C42CF9DB7100D1EAD0 /* CircularProgressBar */,
 				473CF8C62CF9DB7100D1EAD0 /* DynamicHeightTextField */,
-				473CF8C92CF9DB7100D1EAD0 /* GradientLoaderView */,
 				473CF8CB2CF9DB7100D1EAD0 /* InputField */,
-				473CF8CF2CF9DB7100D1EAD0 /* NavigationTitle */,
 				473CF8D12CF9DB7100D1EAD0 /* NextButton */,
-				473CF8D32CF9DB7100D1EAD0 /* SegmentedControl */,
 				473CF8D52CF9DB7100D1EAD0 /* WebView */,
 			);
 			path = Views;
@@ -319,10 +269,7 @@
 		473CF8DC2CF9DB7100D1EAD0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				473CF8D82CF9DB7100D1EAD0 /* GoalModel.swift */,
-				473CF8D92CF9DB7100D1EAD0 /* IncomeCostModel.swift */,
-				473CF8DA2CF9DB7100D1EAD0 /* NoteModel.swift */,
-				473CF8DB2CF9DB7100D1EAD0 /* UserModel.swift */,
+				473CF9CE2CFA2A9D00D1EAD0 /* TaskModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -422,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				473CF9362CF9DB7100D1EAD0 /* TabBar */,
+				473CF9C42CFA1DA500D1EAD0 /* ListFlow */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -504,6 +452,52 @@
 				473CF9BA2CF9EA3400D1EAD0 /* DotsProgressView.swift */,
 			);
 			path = DotsProgressView;
+			sourceTree = "<group>";
+		};
+		473CF9C42CFA1DA500D1EAD0 /* ListFlow */ = {
+			isa = PBXGroup;
+			children = (
+				473CF9C72CFA203B00D1EAD0 /* TaskList */,
+				473CF9C92CFA20A300D1EAD0 /* AddTask */,
+				473CF9D72CFA345000D1EAD0 /* Settings */,
+			);
+			path = ListFlow;
+			sourceTree = "<group>";
+		};
+		473CF9C72CFA203B00D1EAD0 /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				473CF9DE2CFA357700D1EAD0 /* Views */,
+				473CF9C22CFA1DA500D1EAD0 /* ListView.swift */,
+				473CF9C32CFA1DA500D1EAD0 /* ListViewModel.swift */,
+			);
+			path = TaskList;
+			sourceTree = "<group>";
+		};
+		473CF9C92CFA20A300D1EAD0 /* AddTask */ = {
+			isa = PBXGroup;
+			children = (
+				473CF9CA2CFA20AF00D1EAD0 /* AddTaskView.swift */,
+				473CF9CC2CFA20B500D1EAD0 /* AddTaskViewModel.swift */,
+			);
+			path = AddTask;
+			sourceTree = "<group>";
+		};
+		473CF9D72CFA345000D1EAD0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				473CF9D52CFA345000D1EAD0 /* SettingsView.swift */,
+				473CF9D62CFA345000D1EAD0 /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		473CF9DE2CFA357700D1EAD0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				473CF9DD2CFA357700D1EAD0 /* TaskCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -628,21 +622,19 @@
 				473CF9B42CF9DF5900D1EAD0 /* FileManager+Image.swift in Sources */,
 				473CF95E2CF9DB7100D1EAD0 /* ShareSheet.swift in Sources */,
 				473CF95F2CF9DB7100D1EAD0 /* BackButton.swift in Sources */,
-				473CF9602CF9DB7100D1EAD0 /* BlurredContainerView.swift in Sources */,
-				473CF9612CF9DB7100D1EAD0 /* BlurView.swift in Sources */,
 				473CF9622CF9DB7100D1EAD0 /* CircularProgressBar.swift in Sources */,
 				473CF9632CF9DB7100D1EAD0 /* DynamicHeightTextField.swift in Sources */,
-				473CF9642CF9DB7100D1EAD0 /* GradientLoaderView.swift in Sources */,
-				473CF9652CF9DB7100D1EAD0 /* ProgressProgressBar.swift in Sources */,
+				473CF9CD2CFA20B500D1EAD0 /* AddTaskViewModel.swift in Sources */,
+				473CF9D82CFA345000D1EAD0 /* SettingsView.swift in Sources */,
+				473CF9D92CFA345000D1EAD0 /* SettingsViewModel.swift in Sources */,
 				473CF9662CF9DB7100D1EAD0 /* InputField.swift in Sources */,
-				473CF9682CF9DB7100D1EAD0 /* NavigationTitleView.swift in Sources */,
 				473CF9692CF9DB7100D1EAD0 /* NextButton.swift in Sources */,
-				473CF96A2CF9DB7100D1EAD0 /* SegmentedControl.swift in Sources */,
 				473CF96B2CF9DB7100D1EAD0 /* SwiftUIViewWebView.swift in Sources */,
-				473CF96C2CF9DB7100D1EAD0 /* GoalModel.swift in Sources */,
-				473CF96D2CF9DB7100D1EAD0 /* IncomeCostModel.swift in Sources */,
-				473CF96E2CF9DB7100D1EAD0 /* NoteModel.swift in Sources */,
-				473CF96F2CF9DB7100D1EAD0 /* UserModel.swift in Sources */,
+				473CF9C52CFA1DA500D1EAD0 /* ListView.swift in Sources */,
+				473CF9DF2CFA357700D1EAD0 /* TaskCell.swift in Sources */,
+				473CF9CB2CFA20AF00D1EAD0 /* AddTaskView.swift in Sources */,
+				473CF9CF2CFA2A9D00D1EAD0 /* TaskModel.swift in Sources */,
+				473CF9C62CFA1DA500D1EAD0 /* ListViewModel.swift in Sources */,
 				473CF9702CF9DB7100D1EAD0 /* Colors.generated.swift in Sources */,
 				473CF9712CF9DB7100D1EAD0 /* Fonts.generated.swift in Sources */,
 				473CF9722CF9DB7100D1EAD0 /* Images.generated.swift in Sources */,

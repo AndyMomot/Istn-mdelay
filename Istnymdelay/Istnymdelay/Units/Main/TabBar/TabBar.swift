@@ -17,21 +17,9 @@ struct TabBar: View {
     var body: some View {
         VStack(spacing: .zero) {
             TabView(selection: $viewModel.selection) {
-                ScrollView {
-                    VStack {
-                        ForEach(0..<8) { _ in
-                            Rectangle()
-                                .frame(height: 100)
-                                .overlay {
-                                    Rectangle()
-                                        .stroke(.red, lineWidth: 4)
-                                }
-                                .padding(.vertical, 4)
-                        }
-                    }
-                }
-                .tag(TabBarSelectionView.list.rawValue)
-                .environmentObject(viewModel)
+                ListView()
+                    .tag(TabBarSelectionView.list.rawValue)
+                    .environmentObject(viewModel)
                 
                 Text("Regulator czasowy")
                     .tag(TabBarSelectionView.timer.rawValue)

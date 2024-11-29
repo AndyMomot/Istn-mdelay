@@ -9,32 +9,40 @@ import SwiftUI
 
 struct BackButton: View {
     var title: String
+    var canDismiss = true
     var action: (() -> Void)?
     
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        Button {
-            action?()
-            dismiss.callAsFunction()
-        } label: {
-            HStack(spacing: 25) {
-                Image(systemName: "chevron.left")
-                Text(title)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.6)
-                Spacer()
+        HStack(spacing: 25) {
+            if canDismiss {
+                Button {
+                    action?()
+                    dismiss.callAsFunction()
+                } label: {
+                    Image(systemName: "chevron.left")
+                }
             }
-            .foregroundStyle(.white)
-            .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 30))
+            
+            Text(title)
+                .lineLimit(1)
+                .minimumScaleFactor(0.6)
+            
+            Spacer()
         }
+        .foregroundStyle(.white)
+        .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 28))
         .navigationBarBackButtonHidden()
     }
 }
 
 #Preview {
     ZStack {
-       
-        BackButton(title: "Telefony") {}
+        Color.green
+        VStack(spacing: 20) {
+            BackButton(title: "Telefony") {}
+            BackButton(title: "Telefony") {}
+        }
     }
 }
