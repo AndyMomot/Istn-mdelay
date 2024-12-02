@@ -29,7 +29,6 @@ struct FileManagerService {
                 return nil
             }
         } catch {
-            print("Error retrieving file: \(error)")
             return nil
         }
     }
