@@ -23,12 +23,37 @@ extension ListView {
             }
         }
         
-        func delete(item: String) {
-            
+        func delete(id: String) {
+            DispatchQueue.global().async { [weak self] in
+                guard let self else { return }
+                DefaultsService.shared.tasks.removeAll(where: { $0.id == id })
+                self.getTasks()
+            }
         }
         
-        func edit(item: String) {
+        func handleTask(action: TaskCell.ViewAction, taskId: String) {
+            let shared = DefaultsService.shared
             
+            switch action {
+            case .start:
+                DispatchQueue.global().async { [weak self] in
+                    guard let self else { return }
+                    if let index = shared.tasks.firstIndex(where: { $0.id == taskId }) {
+                        shared.tasks[index].status = TaskStatus.inProgress.rawValue
+                        shared.tasks[index].dateStarted = .init()
+                        self.getTasks()
+                    }
+                }
+            case .finish:
+                DispatchQueue.global().async { [weak self] in
+                    guard let self else { return }
+                    if let index = shared.tasks.firstIndex(where: { $0.id == taskId }) {
+                        shared.tasks[index].status = TaskStatus.finished.rawValue
+                        shared.tasks[index].dateStarted = nil
+                        self.getTasks()
+                    }
+                }
+            }
         }
     }
 }

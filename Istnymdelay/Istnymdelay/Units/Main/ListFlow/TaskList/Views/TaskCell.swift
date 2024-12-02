@@ -10,11 +10,27 @@ import SwiftUI
 struct TaskCell: View {
     var model: TaskModel
     var action: (ViewAction) -> Void
+    private var status: TaskStatus = .prepared
+    private var priority: TaskPriority = .low
+    private var priorityColor: Color = .greenLite
+    
+    init(model: TaskModel, action: @escaping (ViewAction) -> Void) {
+        self.model = model
+        self.action = action
+        self.status = TaskStatus(rawValue: model.status) ?? .prepared
+        self.priority = TaskPriority(rawValue: model.priority) ?? .low
+        
+        switch priority {
+        case .low:
+            priorityColor = .greenLite
+        case .regular:
+            priorityColor = .orange
+        case .high:
+            priorityColor = .red
+        }
+    }
     
     @State private var image = Image(systemName: "photo")
-    @State private var status: TaskStatus = .prepared
-    @State private var priority: TaskPriority = .low
-    @State private var priorityColor: Color = .greenLite
     
     private var bounds: CGRect {
         UIScreen.main.bounds
@@ -31,9 +47,7 @@ struct TaskCell: View {
                     VStack {
                         HStack(spacing: 0) {
                             Text("Stan: \(status.description)")
-                            
                             Spacer(minLength: 10)
-                            
                             HStack(spacing: 5) {
                                 Text(priority.description)
                                 Circle()
@@ -43,6 +57,7 @@ struct TaskCell: View {
                         }
                         .foregroundStyle(.white)
                         .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 16))
+                        .shadow(radius: 5)
                         
                         Spacer()
                     }
@@ -78,39 +93,20 @@ struct TaskCell: View {
                                     .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 16))
                                     .shadow(radius: 5)
                                 
-                                HStack(spacing: 0) {
-                                    Button {
-                                        action(.pause)
-                                    } label: {
-                                        HStack {
-                                            Spacer()
-                                            Image(systemName: "pause.fill")
-                                                .foregroundStyle(.white)
-                                            Spacer()
-                                        }
-                                        .padding(.vertical, 10)
-                                        .background(.greenCustom)
-                                        .cornerRadius(3, corners: .allCorners)
-                                        .shadow(radius: 5)
+                                Button {
+                                    action(.finish)
+                                } label: {
+                                    HStack {
+                                        Spacer()
+                                        Image(systemName: "checkmark")
+                                            .foregroundStyle(.white)
+                                            .fontWeight(.bold)
+                                        Spacer()
                                     }
-                                    
-                                    Spacer(minLength: 10)
-                                    
-                                    Button {
-                                        action(.finish)
-                                    } label: {
-                                        HStack {
-                                            Spacer()
-                                            Image(systemName: "checkmark")
-                                                .foregroundStyle(.white)
-                                                .fontWeight(.bold)
-                                            Spacer()
-                                        }
-                                        .padding(.vertical, 10)
-                                        .background(.greenCustom)
-                                        .cornerRadius(3, corners: .allCorners)
-                                        .shadow(radius: 5)
-                                    }
+                                    .padding(.vertical, 10)
+                                    .background(.greenCustom)
+                                    .cornerRadius(3, corners: .allCorners)
+                                    .shadow(radius: 5)
                                 }
                                 .padding(10)
                             }
@@ -171,10 +167,13 @@ struct TaskCell: View {
                 Spacer()
             }
             
+            HStack {
             Text(model.description)
                 .foregroundStyle(.white)
                 .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 16))
                 .lineSpacing(1.5)
+                Spacer()
+            }
         }
         .padding()
         .background(Colors.greenCustom.swiftUIColor)
@@ -189,21 +188,12 @@ struct TaskCell: View {
 
 private extension TaskCell {
     func setData(with model: TaskModel) {
-        DispatchQueue.main.async {
+        DispatchQueue.global().async {
             FileManagerService().fetchImage(with: model.id) { data in
                 guard let data, let uiImage = UIImage(data: data) else { return }
-                image = Image(uiImage: uiImage)
-            }
-            
-            status = TaskStatus(rawValue: model.status) ?? .prepared
-            priority = TaskPriority(rawValue: model.priority) ?? .low
-            switch priority {
-            case .low:
-                priorityColor = .greenLite
-            case .regular:
-                priorityColor = .orange
-            case .high:
-                priorityColor = .red
+                DispatchQueue.main.async {
+                    image = Image(uiImage: uiImage)
+                }
             }
         }
     }
@@ -211,7 +201,7 @@ private extension TaskCell {
 
 extension TaskCell {
     enum ViewAction {
-        case start, pause, finish
+        case start, finish
     }
 }
 

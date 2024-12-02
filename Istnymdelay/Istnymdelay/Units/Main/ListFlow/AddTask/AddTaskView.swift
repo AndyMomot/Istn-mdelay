@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct AddTaskView: View {
+    var viewState: ViewState
     
-    @StateObject private var viewModel = AddTaskViewModel()
+    init(viewState: ViewState) {
+        self.viewState = viewState
+    }
     
-    @State private var selectedPriority = TaskPriority.low
-    @State private var priorityColor: Color = .greenLite
-    private var priorities = TaskPriority.allCases
+    @StateObject private var viewModel = ViewModel()
+    @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var tabBarVM: TabBar.TabBarViewModel
     
     var body: some View {
         ZStack {
@@ -30,7 +33,7 @@ struct AddTaskView: View {
                     Button {
                         viewModel.showImagePicker.toggle()
                     } label: {
-                        Image(systemName: "photo.badge.plus")
+                        Image(systemName: viewModel.image == UIImage() ? "photo.badge.plus" : "photo.badge.checkmark")
                             .resizable()
                             .scaledToFit()
                             .foregroundStyle(.white)
@@ -40,7 +43,7 @@ struct AddTaskView: View {
                 
                 ScrollView {
                     VStack(spacing: 20) {
-                        InputField(title: "Sfinalizowanie raportu z projektu",
+                        CustomTextField(title: "Sfinalizowanie raportu z projektu",
                                    text: $viewModel.name)
                         
                         HStack {
@@ -65,17 +68,17 @@ struct AddTaskView: View {
                                 .foregroundStyle(.white)
                             
                             Menu {
-                                ForEach(priorities, id: \.description) { priority in
+                                ForEach(viewModel.priorities, id: \.description) { priority in
                                     Button {
                                         DispatchQueue.main.async {
-                                            selectedPriority = priority
+                                            viewModel.selectedPriority = priority
                                             switch priority {
                                             case .low:
-                                                priorityColor = .greenLite
+                                                viewModel.priorityColor = .greenLite
                                             case .regular:
-                                                priorityColor = .orange
+                                                viewModel.priorityColor = .orange
                                             case .high:
-                                                priorityColor = .red
+                                                viewModel.priorityColor = .red
                                             }
                                         }
                                     } label: {
@@ -86,12 +89,16 @@ struct AddTaskView: View {
                                 }
                             } label: {
                                 HStack {
-                                    Text(selectedPriority.description)
-                                        .foregroundStyle(priorityColor)
+                                    HStack {
+                                        Text(viewModel.selectedPriority.description)
+                                        Circle()
+                                            .fill(viewModel.priorityColor)
+                                            .frame(width: 10)
+                                    }
                                     Spacer()
                                     Image(systemName: "chevron.down")
-                                        .foregroundStyle(.darkBlueGreen)
                                 }
+                                .foregroundStyle(.darkBlueGreen)
                                 .font(Fonts.SFProDisplay.regular.swiftUIFont(size: 16))
                                 .padding(.vertical, 18)
                                 .padding(.horizontal, 14)
@@ -99,10 +106,67 @@ struct AddTaskView: View {
                                 .cornerRadius(8, corners: .allCorners)
                             }
                         }
+                        
+                        CustomTextField(title: "Czas wykonania, g",
+                                   text: $viewModel.executionTime)
+                        .keyboardType(.numberPad)
+                        
+                        CustomTextField(title: "Opis",
+                                        isDynamic: true,
+                                        text: $viewModel.description)
                     }
                 }
+                .scrollIndicators(.never)
+                
+                HStack(spacing: 15) {
+                    Button {
+                        viewModel.save(viewState) {
+                            dismiss.callAsFunction()
+                        }
+                    } label: {
+                        ZStack {
+                            Capsule()
+                                .fill(.white)
+                            Text("Zapisz")
+                                .foregroundStyle(.greenCustom)
+                                .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 18))
+                        }
+                    }
+                    
+                    switch viewState {
+                    case .add:
+                        EmptyView()
+                    case .edit(let item):
+                        Button {
+                            viewModel.delete(id: item.id) {
+                                dismiss.callAsFunction()
+                            }
+                        } label: {
+                            ZStack {
+                                Capsule()
+                                    .fill(.white)
+                                Text("Usuń")
+                                    .foregroundStyle(.greenCustom)
+                                    .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 18))
+                            }
+                        }
+                    }
+                }
+                .frame(height: 49)
+                .padding(.bottom, 6)
             }
             .padding(.horizontal)
+        }
+        .onAppear {
+            viewModel.setState(viewState)
+            withAnimation {
+                tabBarVM.showTabBar(false)
+            }
+        }
+        .onDisappear {
+            withAnimation {
+                tabBarVM.showTabBar(true)
+            }
         }
         .sheet(isPresented: $viewModel.showImagePicker) {
             ImagePicker(selectedImage: $viewModel.image)
@@ -110,6 +174,8 @@ struct AddTaskView: View {
     }
 }
 
+
+
 #Preview {
-    AddTaskView()
+    AddTaskView(viewState: .add)
 }

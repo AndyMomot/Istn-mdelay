@@ -28,10 +28,11 @@ struct TabBar: View {
                     .tag(TabBarSelectionView.statistics.rawValue)
             }
             
-            TabBarCustomView(selectedItem: $viewModel.selection)
-                .frame(height: UIScreen.main.bounds.height * 0.12)
+            if viewModel.isShowTabBar {
+                TabBarCustomView(selectedItem: $viewModel.selection)
+                    .frame(height: UIScreen.main.bounds.height * 0.12)
+            }
         }
-        .ignoresSafeArea(edges: .bottom)
     }
 }
 

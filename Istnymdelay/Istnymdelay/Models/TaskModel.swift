@@ -7,12 +7,25 @@
 
 import Foundation
 
-struct TaskModel: Identifiable, Codable {
+struct TaskModel: Identifiable, Codable, Hashable {
     private(set) var id = UUID().uuidString
     var name, description: String
     var deadline: Date
     var priority, executionTime, status: Int
-    var executedTime = 0
+    
+    var dateStarted: Date?
+    var executedTime: Int {
+        guard let dateStarted,
+              let endDate = Calendar.current.date(byAdding: .hour,
+                                                  value: executionTime,
+                                                  to: dateStarted),
+              let differenceInHours = Calendar.current.dateComponents([.hour],
+                                                                      from: dateStarted,
+                                                                      to: endDate).hour
+        else { return 0 }
+        
+        return executionTime - differenceInHours
+    }
 }
 
 enum TaskPriority: Int, CaseIterable {

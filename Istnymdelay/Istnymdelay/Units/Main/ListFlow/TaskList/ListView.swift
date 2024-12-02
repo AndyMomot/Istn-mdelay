@@ -33,48 +33,48 @@ struct ListView: View {
                                 .frame(width: 40)
                         }
                     }
+                    .padding(.horizontal)
                     
                     List {
                         ForEach(viewModel.tasks) { task in
                             TaskCell(model: task) { action in
-                                
+                                DispatchQueue.main.async {
+                                    viewModel.handleTask(action: action,
+                                                         taskId: task.id)
+                                }
                             }
-                                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                                    Button {
-                                        withAnimation {
-                                            viewModel.delete(item: task.id)
-                                        }
-                                    } label: {
-                                        Asset.trash.swiftUIImage
-                                            .resizable()
-                                            .scaledToFit()
-                                            .foregroundStyle(.white)
-                                            .frame(width: 55, height: 55)
-                                    }
-                                    .tint(.clear)
-
+                            .padding(.horizontal)
+                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                Button {
+                                    viewModel.delete(id: task.id)
+                                } label: {
+                                    Asset.trash.swiftUIImage
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundStyle(.white)
+                                        .frame(width: 55, height: 55)
                                 }
-                                .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                                    Button {
-                                        viewModel.edit(item: task.id)
-                                    } label: {
-                                        Asset.edit.swiftUIImage
-                                            .resizable()
-                                            .scaledToFit()
-                                            .foregroundStyle(.white)
-                                            .frame(width: 55, height: 55)
-                                    }
-                                    .tint(.clear)
+                                .tint(.clear)
+                            }
+                            .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                                NavigationLink(value: task) {
+                                    Asset.edit.swiftUIImage
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundStyle(.white)
+                                        .frame(width: 55, height: 55)
                                 }
+                                .tint(.clear)
+                            }
                         }
                         .listRowSeparator(.hidden)
                         .listRowBackground(EmptyView())
                     }
                     .listStyle(.plain)
                     .scrollContentBackground(.hidden)
+                    .scrollIndicators(.never)
                     .background(Color.clear)
                 }
-                .padding(.horizontal)
                 
                 VStack {
                     Spacer()
@@ -98,7 +98,10 @@ struct ListView: View {
                 SettingsView()
             }
             .navigationDestination(isPresented: $viewModel.showAddTask) {
-                AddTaskView()
+                AddTaskView(viewState: .add)
+            }
+            .navigationDestination(for: TaskModel.self) { item in
+                AddTaskView(viewState: .edit(item: item))
             }
         }
     }
