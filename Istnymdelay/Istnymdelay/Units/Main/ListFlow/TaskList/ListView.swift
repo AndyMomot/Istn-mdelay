@@ -35,16 +35,14 @@ struct ListView: View {
                     }
                     
                     List {
-                        ForEach(viewModel.tasks, id: \.self) { item in
-                            ZStack {
-                                Color.green
-                                    .frame(height: 450)
-                                Text(item)
+                        ForEach(viewModel.tasks) { task in
+                            TaskCell(model: task) { action in
+                                
                             }
                                 .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                                     Button {
                                         withAnimation {
-                                            viewModel.delete(item: item)
+                                            viewModel.delete(item: task.id)
                                         }
                                     } label: {
                                         Asset.trash.swiftUIImage
@@ -58,7 +56,7 @@ struct ListView: View {
                                 }
                                 .swipeActions(edge: .leading, allowsFullSwipe: false) {
                                     Button {
-                                        viewModel.edit(item: "")
+                                        viewModel.edit(item: task.id)
                                     } label: {
                                         Asset.edit.swiftUIImage
                                             .resizable()
@@ -92,6 +90,9 @@ struct ListView: View {
                             .padding(.bottom, 15)
                     }
                 }
+            }
+            .onAppear {
+                viewModel.getTasks()
             }
             .navigationDestination(isPresented: $viewModel.showSettings) {
                 SettingsView()

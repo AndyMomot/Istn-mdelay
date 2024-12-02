@@ -15,7 +15,7 @@ struct TaskModel: Identifiable, Codable {
     var executedTime = 0
 }
 
-enum TaskPriority: Int {
+enum TaskPriority: Int, CaseIterable {
     case low = 0
     case regular = 1
     case high = 2

@@ -11,16 +11,20 @@ extension ListView {
     final class ViewModel: ObservableObject {
         @Published var showSettings = false
         @Published var showAddTask = false
-        @Published var tasks = [
-            "Task 1",
-            "Task 2",
-            "Task 3",
-            "Task 4",
-            "Task 5"
-        ]
+        @Published var tasks: [TaskModel] = []
+        
+        func getTasks() {
+            DispatchQueue.global().async { [weak self] in
+                guard let self else { return }
+                let tasks = DefaultsService.shared.tasks
+                DispatchQueue.main.async { [self] in
+                    self.tasks = tasks
+                }
+            }
+        }
         
         func delete(item: String) {
-            tasks.removeAll(where: { $0 == item})
+            
         }
         
         func edit(item: String) {
