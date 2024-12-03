@@ -99,9 +99,8 @@ extension AddTaskView {
         }
         
         func delete(id: String, completion: @escaping () -> Void) {
-            DispatchQueue.global().async { [weak self] in
+            DispatchQueue.global().async {
                 DefaultsService.shared.tasks.removeAll(where: { $0.id == id })
-                
                 DispatchQueue.main.async {
                     completion()
                 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		472418A72CFDE58400C30A98 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418A52CFDE58400C30A98 /* CustomTextField.swift */; };
+		472418B12CFF02BE00C30A98 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418AF2CFF02BE00C30A98 /* SettingsButton.swift */; };
 		473CF8AE2CF9DB5A00D1EAD0 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 473CF8AD2CF9DB5A00D1EAD0 /* swiftgen.yml */; };
 		473CF9472CF9DB7100D1EAD0 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473CF8DD2CF9DB7100D1EAD0 /* Colors.xcassets */; };
 		473CF9482CF9DB7100D1EAD0 /* FontsFree-Net-SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 473CF8E12CF9DB7100D1EAD0 /* FontsFree-Net-SFProDisplay-Semibold.ttf */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		472418A52CFDE58400C30A98 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		472418AF2CFF02BE00C30A98 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
 		473CF7A32CF9D7F500D1EAD0 /* Istnymdelay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Istnymdelay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473CF8AD2CF9DB5A00D1EAD0 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		473CF8AF2CF9DB7100D1EAD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,14 @@
 				472418A52CFDE58400C30A98 /* CustomTextField.swift */,
 			);
 			path = CustomTextField;
+			sourceTree = "<group>";
+		};
+		472418B02CFF02BE00C30A98 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				472418AF2CFF02BE00C30A98 /* SettingsButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		473CF79A2CF9D7F400D1EAD0 = {
@@ -475,6 +485,7 @@
 		473CF9D72CFA345000D1EAD0 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				472418B02CFF02BE00C30A98 /* Views */,
 				473CF9D52CFA345000D1EAD0 /* SettingsView.swift */,
 				473CF9D62CFA345000D1EAD0 /* SettingsViewModel.swift */,
 			);
@@ -620,6 +631,7 @@
 				473CF96B2CF9DB7100D1EAD0 /* SwiftUIViewWebView.swift in Sources */,
 				473CF9C52CFA1DA500D1EAD0 /* ListView.swift in Sources */,
 				473CF9DF2CFA357700D1EAD0 /* TaskCell.swift in Sources */,
+				472418B12CFF02BE00C30A98 /* SettingsButton.swift in Sources */,
 				473CF9CB2CFA20AF00D1EAD0 /* AddTaskView.swift in Sources */,
 				473CF9CF2CFA2A9D00D1EAD0 /* TaskModel.swift in Sources */,
 				473CF9C62CFA1DA500D1EAD0 /* ListViewModel.swift in Sources */,
