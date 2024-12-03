@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 extension TimersView {
     final class ViewModel: ObservableObject {

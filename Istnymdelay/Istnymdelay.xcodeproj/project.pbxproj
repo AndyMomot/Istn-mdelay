@@ -14,6 +14,8 @@
 		472418C32CFF0EC700C30A98 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418C12CFF0EC700C30A98 /* TimerCell.swift */; };
 		472418C52CFF2E9400C30A98 /* TimerCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418C42CFF2E9400C30A98 /* TimerCellButton.swift */; };
 		472418C82CFF323000C30A98 /* TimersTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418C72CFF323000C30A98 /* TimersTabView.swift */; };
+		472418CA2CFF4E6B00C30A98 /* MotivationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418C92CFF4E6B00C30A98 /* MotivationsView.swift */; };
+		472418CC2CFF4E7100C30A98 /* MotivationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418CB2CFF4E7100C30A98 /* MotivationsViewModel.swift */; };
 		473CF8AE2CF9DB5A00D1EAD0 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 473CF8AD2CF9DB5A00D1EAD0 /* swiftgen.yml */; };
 		473CF9472CF9DB7100D1EAD0 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473CF8DD2CF9DB7100D1EAD0 /* Colors.xcassets */; };
 		473CF9482CF9DB7100D1EAD0 /* FontsFree-Net-SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 473CF8E12CF9DB7100D1EAD0 /* FontsFree-Net-SFProDisplay-Semibold.ttf */; };
@@ -79,6 +81,8 @@
 		472418C12CFF0EC700C30A98 /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
 		472418C42CFF2E9400C30A98 /* TimerCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCellButton.swift; sourceTree = "<group>"; };
 		472418C72CFF323000C30A98 /* TimersTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersTabView.swift; sourceTree = "<group>"; };
+		472418C92CFF4E6B00C30A98 /* MotivationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationsView.swift; sourceTree = "<group>"; };
+		472418CB2CFF4E7100C30A98 /* MotivationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationsViewModel.swift; sourceTree = "<group>"; };
 		473CF7A32CF9D7F500D1EAD0 /* Istnymdelay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Istnymdelay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473CF8AD2CF9DB5A00D1EAD0 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		473CF8AF2CF9DB7100D1EAD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 		472418B72CFF08A600C30A98 /* Motivations */ = {
 			isa = PBXGroup;
 			children = (
+				472418C92CFF4E6B00C30A98 /* MotivationsView.swift */,
+				472418CB2CFF4E7100C30A98 /* MotivationsViewModel.swift */,
 			);
 			path = Motivations;
 			sourceTree = "<group>";
@@ -682,12 +688,14 @@
 				473CF95F2CF9DB7100D1EAD0 /* BackButton.swift in Sources */,
 				472418C32CFF0EC700C30A98 /* TimerCell.swift in Sources */,
 				473CF9622CF9DB7100D1EAD0 /* CircularProgressBar.swift in Sources */,
+				472418CC2CFF4E7100C30A98 /* MotivationsViewModel.swift in Sources */,
 				473CF9CD2CFA20B500D1EAD0 /* AddTaskViewModel.swift in Sources */,
 				472418A72CFDE58400C30A98 /* CustomTextField.swift in Sources */,
 				473CF9D82CFA345000D1EAD0 /* SettingsView.swift in Sources */,
 				473CF9D92CFA345000D1EAD0 /* SettingsViewModel.swift in Sources */,
 				473CF9692CF9DB7100D1EAD0 /* NextButton.swift in Sources */,
 				473CF96B2CF9DB7100D1EAD0 /* SwiftUIViewWebView.swift in Sources */,
+				472418CA2CFF4E6B00C30A98 /* MotivationsView.swift in Sources */,
 				473CF9C52CFA1DA500D1EAD0 /* ListView.swift in Sources */,
 				473CF9DF2CFA357700D1EAD0 /* TaskCell.swift in Sources */,
 				472418B12CFF02BE00C30A98 /* SettingsButton.swift in Sources */,
