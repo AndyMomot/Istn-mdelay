@@ -57,11 +57,23 @@ extension Date {
         let components = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)
         return calendar.date(from: components)!
     }
-    
-    var today: Date {
+}
+
+extension Date {
+    static var today: Date {
         let currentDate = Date()
         let calendar = Calendar.current
         return calendar.startOfDay(for: currentDate)
+    }
+    
+    static func differenceBetweenDates(from startDate: Date,
+                                       to endDate: Date,
+                                       component: Calendar.Component) -> Int? {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([component], from: startDate, to: endDate)
+        let value = components.value(for: component)
+        
+        return value
     }
 }
 

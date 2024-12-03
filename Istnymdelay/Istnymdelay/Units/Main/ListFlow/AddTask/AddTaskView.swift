@@ -26,7 +26,7 @@ struct AddTaskView: View {
             
             VStack {
                 HStack {
-                    BackButton(title: "Sfinalizowanie raportu z projektu")
+                    BackButton(title: "Nowe zadanie")
                     
                     Spacer()
                     

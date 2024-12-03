@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		472418A72CFDE58400C30A98 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418A52CFDE58400C30A98 /* CustomTextField.swift */; };
 		472418B12CFF02BE00C30A98 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418AF2CFF02BE00C30A98 /* SettingsButton.swift */; };
+		472418BB2CFF08BA00C30A98 /* TimersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418BA2CFF08BA00C30A98 /* TimersView.swift */; };
+		472418BD2CFF08C800C30A98 /* TimersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418BC2CFF08C700C30A98 /* TimersViewModel.swift */; };
+		472418C32CFF0EC700C30A98 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418C12CFF0EC700C30A98 /* TimerCell.swift */; };
+		472418C52CFF2E9400C30A98 /* TimerCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418C42CFF2E9400C30A98 /* TimerCellButton.swift */; };
+		472418C82CFF323000C30A98 /* TimersTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418C72CFF323000C30A98 /* TimersTabView.swift */; };
 		473CF8AE2CF9DB5A00D1EAD0 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 473CF8AD2CF9DB5A00D1EAD0 /* swiftgen.yml */; };
 		473CF9472CF9DB7100D1EAD0 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473CF8DD2CF9DB7100D1EAD0 /* Colors.xcassets */; };
 		473CF9482CF9DB7100D1EAD0 /* FontsFree-Net-SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 473CF8E12CF9DB7100D1EAD0 /* FontsFree-Net-SFProDisplay-Semibold.ttf */; };
@@ -69,6 +74,11 @@
 /* Begin PBXFileReference section */
 		472418A52CFDE58400C30A98 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		472418AF2CFF02BE00C30A98 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
+		472418BA2CFF08BA00C30A98 /* TimersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersView.swift; sourceTree = "<group>"; };
+		472418BC2CFF08C700C30A98 /* TimersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersViewModel.swift; sourceTree = "<group>"; };
+		472418C12CFF0EC700C30A98 /* TimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
+		472418C42CFF2E9400C30A98 /* TimerCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCellButton.swift; sourceTree = "<group>"; };
+		472418C72CFF323000C30A98 /* TimersTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersTabView.swift; sourceTree = "<group>"; };
 		473CF7A32CF9D7F500D1EAD0 /* Istnymdelay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Istnymdelay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473CF8AD2CF9DB5A00D1EAD0 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		473CF8AF2CF9DB7100D1EAD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +161,50 @@
 			isa = PBXGroup;
 			children = (
 				472418AF2CFF02BE00C30A98 /* SettingsButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		472418B62CFF08A600C30A98 /* MotivationDetails */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MotivationDetails;
+			sourceTree = "<group>";
+		};
+		472418B72CFF08A600C30A98 /* Motivations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Motivations;
+			sourceTree = "<group>";
+		};
+		472418B82CFF08A600C30A98 /* Timers */ = {
+			isa = PBXGroup;
+			children = (
+				472418C22CFF0EC700C30A98 /* Views */,
+				472418BA2CFF08BA00C30A98 /* TimersView.swift */,
+				472418BC2CFF08C700C30A98 /* TimersViewModel.swift */,
+			);
+			path = Timers;
+			sourceTree = "<group>";
+		};
+		472418B92CFF08A600C30A98 /* TimerFlow */ = {
+			isa = PBXGroup;
+			children = (
+				472418B82CFF08A600C30A98 /* Timers */,
+				472418B72CFF08A600C30A98 /* Motivations */,
+				472418B62CFF08A600C30A98 /* MotivationDetails */,
+			);
+			path = TimerFlow;
+			sourceTree = "<group>";
+		};
+		472418C22CFF0EC700C30A98 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				472418C72CFF323000C30A98 /* TimersTabView.swift */,
+				472418C12CFF0EC700C30A98 /* TimerCell.swift */,
+				472418C42CFF2E9400C30A98 /* TimerCellButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -369,6 +423,7 @@
 			children = (
 				473CF9362CF9DB7100D1EAD0 /* TabBar */,
 				473CF9C42CFA1DA500D1EAD0 /* ListFlow */,
+				472418B92CFF08A600C30A98 /* TimerFlow */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -613,15 +668,19 @@
 				473CF9562CF9DB7100D1EAD0 /* RootViewController.swift in Sources */,
 				473CF9572CF9DB7100D1EAD0 /* SceneDelegate.swift in Sources */,
 				473CF9582CF9DB7100D1EAD0 /* Date+Additions.swift in Sources */,
+				472418BD2CFF08C800C30A98 /* TimersViewModel.swift in Sources */,
 				473CF9592CF9DB7100D1EAD0 /* Double+Additions.swift in Sources */,
+				472418C82CFF323000C30A98 /* TimersTabView.swift in Sources */,
 				473CF95A2CF9DB7100D1EAD0 /* String+Additions.swift in Sources */,
 				473CF95B2CF9DB7100D1EAD0 /* UINavigationController+Additions.swift in Sources */,
 				473CF95C2CF9DB7100D1EAD0 /* View+Additions.swift in Sources */,
+				472418C52CFF2E9400C30A98 /* TimerCellButton.swift in Sources */,
 				473CF9BC2CF9EA3400D1EAD0 /* DotsProgressView.swift in Sources */,
 				473CF95D2CF9DB7100D1EAD0 /* ImagePicker.swift in Sources */,
 				473CF9B42CF9DF5900D1EAD0 /* FileManager+Image.swift in Sources */,
 				473CF95E2CF9DB7100D1EAD0 /* ShareSheet.swift in Sources */,
 				473CF95F2CF9DB7100D1EAD0 /* BackButton.swift in Sources */,
+				472418C32CFF0EC700C30A98 /* TimerCell.swift in Sources */,
 				473CF9622CF9DB7100D1EAD0 /* CircularProgressBar.swift in Sources */,
 				473CF9CD2CFA20B500D1EAD0 /* AddTaskViewModel.swift in Sources */,
 				472418A72CFDE58400C30A98 /* CustomTextField.swift in Sources */,
@@ -647,6 +706,7 @@
 				473CF99F2CF9DB7100D1EAD0 /* TabBarViewModel.swift in Sources */,
 				473CF9A02CF9DB7100D1EAD0 /* OnboardingView.swift in Sources */,
 				473CF9A12CF9DB7100D1EAD0 /* OnboardingViewModel.swift in Sources */,
+				472418BB2CFF08BA00C30A98 /* TimersView.swift in Sources */,
 				473CF9A22CF9DB7100D1EAD0 /* OnboardingViewTabView.swift in Sources */,
 				473CF9A32CF9DB7100D1EAD0 /* PreloaderView.swift in Sources */,
 				473CF9A42CF9DB7100D1EAD0 /* RootContentView.swift in Sources */,

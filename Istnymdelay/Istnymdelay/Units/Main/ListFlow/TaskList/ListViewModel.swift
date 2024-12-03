@@ -39,8 +39,7 @@ extension ListView {
                 DispatchQueue.global().async { [weak self] in
                     guard let self else { return }
                     if let index = shared.tasks.firstIndex(where: { $0.id == taskId }) {
-                        shared.tasks[index].status = TaskStatus.inProgress.rawValue
-                        shared.tasks[index].dateStarted = .init()
+                        shared.tasks[index].startExecution()
                         self.getTasks()
                     }
                 }
@@ -48,8 +47,7 @@ extension ListView {
                 DispatchQueue.global().async { [weak self] in
                     guard let self else { return }
                     if let index = shared.tasks.firstIndex(where: { $0.id == taskId }) {
-                        shared.tasks[index].status = TaskStatus.finished.rawValue
-                        shared.tasks[index].dateStarted = nil
+                        shared.tasks[index].stopExecution(with: .finished)
                         self.getTasks()
                     }
                 }

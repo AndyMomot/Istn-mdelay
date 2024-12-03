@@ -88,7 +88,7 @@ struct TaskCell: View {
                             Spacer()
                             
                             VStack(alignment: .trailing, spacing: 5) {
-                                Text("\(model.executedTime)/\(model.executionTime)g")
+                                Text("\(convertMinutesInTime(minutes: model.executedMinutes))/\(convertMinutesInTime(minutes: model.executionTime * 60))")
                                     .foregroundStyle(.white)
                                     .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 16))
                                     .shadow(radius: 5)
@@ -196,6 +196,16 @@ private extension TaskCell {
                 }
             }
         }
+    }
+    
+    func convertMinutesInTime(minutes: Int) -> String {
+        // Calculate hours and minutes
+        let hours = minutes / 60
+        let minutes = minutes % 60
+
+        // Format as "HH:mm"
+        let formattedTime = String(format: "%02d:%02d", hours, minutes)
+        return formattedTime
     }
 }
 

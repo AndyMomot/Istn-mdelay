@@ -1,6 +1,5 @@
 //
 //  CircularProgressBar.swift
-//  Libarorent
 //
 //  Created by Andrii Momot on 08.10.2024.
 //

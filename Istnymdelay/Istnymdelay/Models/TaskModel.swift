@@ -9,22 +9,47 @@ import Foundation
 
 struct TaskModel: Identifiable, Codable, Hashable {
     private(set) var id = UUID().uuidString
+    private(set) var dateFinished: Date?
+    
     var name, description: String
     var deadline: Date
     var priority, executionTime, status: Int
     
-    var dateStarted: Date?
-    var executedTime: Int {
-        guard let dateStarted,
-              let endDate = Calendar.current.date(byAdding: .hour,
-                                                  value: executionTime,
-                                                  to: dateStarted),
-              let differenceInHours = Calendar.current.dateComponents([.hour],
-                                                                      from: dateStarted,
-                                                                      to: endDate).hour
-        else { return 0 }
+    init(name: String, description: String, deadline: Date, priority: Int, executionTime: Int, status: Int) {
+        self.name = name
+        self.description = description
+        self.deadline = deadline
+        self.priority = priority
+        self.executionTime = executionTime
+        self.status = status
+    }
+    
+    var executedHours: Int {
+        guard let dateFinished else { return 0 }
+        let differenceInHours = Date.differenceBetweenDates(from: .init(),
+                                                            to: dateFinished,
+                                                            component: .hour) ?? .zero
         
         return executionTime - differenceInHours
+    }
+    
+    var executedMinutes: Int {
+        guard let dateFinished else { return 0 }
+        let differenceInMinutes = Date.differenceBetweenDates(from: .init(),
+                                                            to: dateFinished,
+                                                            component: .minute) ?? 0
+        
+        return (executionTime * 60) - differenceInMinutes
+    }
+    
+    mutating func startExecution() {
+        dateFinished = Date().addOrSubtract(component: .hour, value: executionTime)
+        status = TaskStatus.inProgress.rawValue
+    }
+    
+    mutating func stopExecution(with status: TaskStatus) {
+        dateFinished = nil
+        self.status = status.rawValue
     }
 }
 
