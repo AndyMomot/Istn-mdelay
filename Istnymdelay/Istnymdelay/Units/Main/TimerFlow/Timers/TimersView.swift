@@ -22,7 +22,7 @@ struct TimersView: View {
                         BackButton(title: "Timer", canDismiss: false)
                         Spacer()
                         Button {
-                            viewModel.showMotivation.toggle()
+                            viewModel.showMotivation = true
                         } label: {
                             Image(systemName: "star")
                                 .resizable()
@@ -57,6 +57,9 @@ struct TimersView: View {
             }
             .onAppear {
                 viewModel.getTasks()
+            }
+            .navigationDestination(isPresented: $viewModel.showMotivation) {
+                MotivationsView()
             }
         }
     }

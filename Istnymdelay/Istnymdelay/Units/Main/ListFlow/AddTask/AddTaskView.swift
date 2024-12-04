@@ -16,7 +16,6 @@ struct AddTaskView: View {
     
     @StateObject private var viewModel = ViewModel()
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject private var tabBarVM: TabBar.TabBarViewModel
     
     var body: some View {
         ZStack {
@@ -159,14 +158,6 @@ struct AddTaskView: View {
         }
         .onAppear {
             viewModel.setState(viewState)
-            withAnimation {
-                tabBarVM.showTabBar(false)
-            }
-        }
-        .onDisappear {
-            withAnimation {
-                tabBarVM.showTabBar(true)
-            }
         }
         .sheet(isPresented: $viewModel.showImagePicker) {
             ImagePicker(selectedImage: $viewModel.image)

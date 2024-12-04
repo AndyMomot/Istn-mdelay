@@ -16,6 +16,7 @@
 		472418C82CFF323000C30A98 /* TimersTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418C72CFF323000C30A98 /* TimersTabView.swift */; };
 		472418CA2CFF4E6B00C30A98 /* MotivationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418C92CFF4E6B00C30A98 /* MotivationsView.swift */; };
 		472418CC2CFF4E7100C30A98 /* MotivationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418CB2CFF4E7100C30A98 /* MotivationsViewModel.swift */; };
+		472418CE2D008F5D00C30A98 /* MotivationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418CD2D008F5D00C30A98 /* MotivationDetailsView.swift */; };
 		473CF8AE2CF9DB5A00D1EAD0 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 473CF8AD2CF9DB5A00D1EAD0 /* swiftgen.yml */; };
 		473CF9472CF9DB7100D1EAD0 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473CF8DD2CF9DB7100D1EAD0 /* Colors.xcassets */; };
 		473CF9482CF9DB7100D1EAD0 /* FontsFree-Net-SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 473CF8E12CF9DB7100D1EAD0 /* FontsFree-Net-SFProDisplay-Semibold.ttf */; };
@@ -83,6 +84,7 @@
 		472418C72CFF323000C30A98 /* TimersTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersTabView.swift; sourceTree = "<group>"; };
 		472418C92CFF4E6B00C30A98 /* MotivationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationsView.swift; sourceTree = "<group>"; };
 		472418CB2CFF4E7100C30A98 /* MotivationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationsViewModel.swift; sourceTree = "<group>"; };
+		472418CD2D008F5D00C30A98 /* MotivationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationDetailsView.swift; sourceTree = "<group>"; };
 		473CF7A32CF9D7F500D1EAD0 /* Istnymdelay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Istnymdelay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473CF8AD2CF9DB5A00D1EAD0 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		473CF8AF2CF9DB7100D1EAD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		472418B62CFF08A600C30A98 /* MotivationDetails */ = {
 			isa = PBXGroup;
 			children = (
+				472418CD2D008F5D00C30A98 /* MotivationDetailsView.swift */,
 			);
 			path = MotivationDetails;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 				473CF99E2CF9DB7100D1EAD0 /* TabBarCustomView.swift in Sources */,
 				473CF99F2CF9DB7100D1EAD0 /* TabBarViewModel.swift in Sources */,
 				473CF9A02CF9DB7100D1EAD0 /* OnboardingView.swift in Sources */,
+				472418CE2D008F5D00C30A98 /* MotivationDetailsView.swift in Sources */,
 				473CF9A12CF9DB7100D1EAD0 /* OnboardingViewModel.swift in Sources */,
 				472418BB2CFF08BA00C30A98 /* TimersView.swift in Sources */,
 				473CF9A22CF9DB7100D1EAD0 /* OnboardingViewTabView.swift in Sources */,

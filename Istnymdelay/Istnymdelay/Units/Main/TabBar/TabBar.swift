@@ -23,7 +23,6 @@ struct TabBar: View {
                 TabView(selection: $viewModel.selection) {
                     ListView()
                         .tag(TabBarSelectionView.list.rawValue)
-                        .environmentObject(viewModel)
                     
                     TimersView()
                         .tag(TabBarSelectionView.timer.rawValue)
@@ -31,6 +30,8 @@ struct TabBar: View {
                     Text("Statistics")
                         .tag(TabBarSelectionView.statistics.rawValue)
                 }
+                
+                Spacer()
                 
                 if viewModel.isShowTabBar {
                     TabBarCustomView(selectedItem: $viewModel.selection)
