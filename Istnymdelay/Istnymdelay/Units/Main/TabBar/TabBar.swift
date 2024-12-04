@@ -27,7 +27,7 @@ struct TabBar: View {
                     TimersView()
                         .tag(TabBarSelectionView.timer.rawValue)
                     
-                    Text("Statistics")
+                    StatisticsView()
                         .tag(TabBarSelectionView.statistics.rawValue)
                 }
                 

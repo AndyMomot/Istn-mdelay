@@ -9,7 +9,7 @@ import Foundation
 
 struct TaskModel: Identifiable, Codable, Hashable {
     private(set) var id = UUID().uuidString
-    private(set) var dateFinished: Date?
+    private(set) var dateStarted: Date?
     
     var name, description: String
     var deadline: Date
@@ -25,30 +25,29 @@ struct TaskModel: Identifiable, Codable, Hashable {
     }
     
     var executedHours: Int {
-        guard let dateFinished else { return 0 }
-        let differenceInHours = Date.differenceBetweenDates(from: .init(),
-                                                            to: dateFinished,
+        guard let dateStarted else { return 0 }
+        let differenceInHours = Date.differenceBetweenDates(from: dateStarted,
+                                                            to: .init(),
                                                             component: .hour) ?? .zero
         
-        return executionTime - differenceInHours
+        return differenceInHours
     }
     
     var executedMinutes: Int {
-        guard let dateFinished else { return 0 }
-        let differenceInMinutes = Date.differenceBetweenDates(from: .init(),
-                                                            to: dateFinished,
+        guard let dateStarted else { return 0 }
+        let differenceInMinutes = Date.differenceBetweenDates(from: dateStarted,
+                                                              to: .init(),
                                                             component: .minute) ?? 0
         
-        return (executionTime * 60) - differenceInMinutes
+        return differenceInMinutes
     }
     
     mutating func startExecution() {
-        dateFinished = Date().addOrSubtract(component: .hour, value: executionTime)
+        dateStarted = Date()
         status = TaskStatus.inProgress.rawValue
     }
     
     mutating func stopExecution(with status: TaskStatus) {
-        dateFinished = nil
         self.status = status.rawValue
     }
 }

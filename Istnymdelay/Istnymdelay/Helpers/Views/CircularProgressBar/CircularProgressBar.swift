@@ -47,10 +47,10 @@ struct CircularProgressBar: View {
                     .minimumScaleFactor(0.6)
             }
         }
+        .padding(lineWidth / 2)
     }
 }
 
 #Preview {
     CircularProgressBar(progress: 0.2)
-        .padding()
 }

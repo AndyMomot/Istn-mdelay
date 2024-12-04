@@ -197,16 +197,6 @@ private extension TaskCell {
             }
         }
     }
-    
-    func convertMinutesInTime(minutes: Int) -> String {
-        // Calculate hours and minutes
-        let hours = minutes / 60
-        let minutes = minutes % 60
-
-        // Format as "HH:mm"
-        let formattedTime = String(format: "%02d:%02d", hours, minutes)
-        return formattedTime
-    }
 }
 
 extension TaskCell {

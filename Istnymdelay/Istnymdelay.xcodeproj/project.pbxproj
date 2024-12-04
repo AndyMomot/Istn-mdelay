@@ -17,6 +17,10 @@
 		472418CA2CFF4E6B00C30A98 /* MotivationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418C92CFF4E6B00C30A98 /* MotivationsView.swift */; };
 		472418CC2CFF4E7100C30A98 /* MotivationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418CB2CFF4E7100C30A98 /* MotivationsViewModel.swift */; };
 		472418CE2D008F5D00C30A98 /* MotivationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418CD2D008F5D00C30A98 /* MotivationDetailsView.swift */; };
+		472418D82D0094C300C30A98 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418D72D0094C300C30A98 /* StatisticsView.swift */; };
+		472418DA2D0094C800C30A98 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418D92D0094C800C30A98 /* StatisticsViewModel.swift */; };
+		472418DC2D00BBC800C30A98 /* QuestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418DB2D00BBC800C30A98 /* QuestsView.swift */; };
+		472418E02D00C85700C30A98 /* QuestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472418DF2D00C85700C30A98 /* QuestsCell.swift */; };
 		473CF8AE2CF9DB5A00D1EAD0 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 473CF8AD2CF9DB5A00D1EAD0 /* swiftgen.yml */; };
 		473CF9472CF9DB7100D1EAD0 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473CF8DD2CF9DB7100D1EAD0 /* Colors.xcassets */; };
 		473CF9482CF9DB7100D1EAD0 /* FontsFree-Net-SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 473CF8E12CF9DB7100D1EAD0 /* FontsFree-Net-SFProDisplay-Semibold.ttf */; };
@@ -85,6 +89,10 @@
 		472418C92CFF4E6B00C30A98 /* MotivationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationsView.swift; sourceTree = "<group>"; };
 		472418CB2CFF4E7100C30A98 /* MotivationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationsViewModel.swift; sourceTree = "<group>"; };
 		472418CD2D008F5D00C30A98 /* MotivationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationDetailsView.swift; sourceTree = "<group>"; };
+		472418D72D0094C300C30A98 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		472418D92D0094C800C30A98 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
+		472418DB2D00BBC800C30A98 /* QuestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestsView.swift; sourceTree = "<group>"; };
+		472418DF2D00C85700C30A98 /* QuestsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestsCell.swift; sourceTree = "<group>"; };
 		473CF7A32CF9D7F500D1EAD0 /* Istnymdelay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Istnymdelay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473CF8AD2CF9DB5A00D1EAD0 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		473CF8AF2CF9DB7100D1EAD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +224,33 @@
 				472418C42CFF2E9400C30A98 /* TimerCellButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		472418D32D0094A100C30A98 /* Quests */ = {
+			isa = PBXGroup;
+			children = (
+				472418DB2D00BBC800C30A98 /* QuestsView.swift */,
+				472418DF2D00C85700C30A98 /* QuestsCell.swift */,
+			);
+			path = Quests;
+			sourceTree = "<group>";
+		};
+		472418D52D0094A100C30A98 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				472418D72D0094C300C30A98 /* StatisticsView.swift */,
+				472418D92D0094C800C30A98 /* StatisticsViewModel.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		472418D62D0094A100C30A98 /* StatisticsFlow */ = {
+			isa = PBXGroup;
+			children = (
+				472418D52D0094A100C30A98 /* Statistics */,
+				472418D32D0094A100C30A98 /* Quests */,
+			);
+			path = StatisticsFlow;
 			sourceTree = "<group>";
 		};
 		473CF79A2CF9D7F400D1EAD0 = {
@@ -433,6 +468,7 @@
 				473CF9362CF9DB7100D1EAD0 /* TabBar */,
 				473CF9C42CFA1DA500D1EAD0 /* ListFlow */,
 				472418B92CFF08A600C30A98 /* TimerFlow */,
+				472418D62D0094A100C30A98 /* StatisticsFlow */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -686,6 +722,7 @@
 				472418C52CFF2E9400C30A98 /* TimerCellButton.swift in Sources */,
 				473CF9BC2CF9EA3400D1EAD0 /* DotsProgressView.swift in Sources */,
 				473CF95D2CF9DB7100D1EAD0 /* ImagePicker.swift in Sources */,
+				472418D82D0094C300C30A98 /* StatisticsView.swift in Sources */,
 				473CF9B42CF9DF5900D1EAD0 /* FileManager+Image.swift in Sources */,
 				473CF95E2CF9DB7100D1EAD0 /* ShareSheet.swift in Sources */,
 				473CF95F2CF9DB7100D1EAD0 /* BackButton.swift in Sources */,
@@ -702,6 +739,7 @@
 				473CF9C52CFA1DA500D1EAD0 /* ListView.swift in Sources */,
 				473CF9DF2CFA357700D1EAD0 /* TaskCell.swift in Sources */,
 				472418B12CFF02BE00C30A98 /* SettingsButton.swift in Sources */,
+				472418E02D00C85700C30A98 /* QuestsCell.swift in Sources */,
 				473CF9CB2CFA20AF00D1EAD0 /* AddTaskView.swift in Sources */,
 				473CF9CF2CFA2A9D00D1EAD0 /* TaskModel.swift in Sources */,
 				473CF9C62CFA1DA500D1EAD0 /* ListViewModel.swift in Sources */,
@@ -719,6 +757,8 @@
 				472418CE2D008F5D00C30A98 /* MotivationDetailsView.swift in Sources */,
 				473CF9A12CF9DB7100D1EAD0 /* OnboardingViewModel.swift in Sources */,
 				472418BB2CFF08BA00C30A98 /* TimersView.swift in Sources */,
+				472418DA2D0094C800C30A98 /* StatisticsViewModel.swift in Sources */,
+				472418DC2D00BBC800C30A98 /* QuestsView.swift in Sources */,
 				473CF9A22CF9DB7100D1EAD0 /* OnboardingViewTabView.swift in Sources */,
 				473CF9A32CF9DB7100D1EAD0 /* PreloaderView.swift in Sources */,
 				473CF9A42CF9DB7100D1EAD0 /* RootContentView.swift in Sources */,
